@@ -33,4 +33,7 @@ const k= await main(req.body.prompt)
 })
 if (process.env.API_KEY)
     console.log("YES")
-app.listen(3000)
+const port=process.env.port||3000
+app.listen(port,()=>{
+  console.log(port)
+})
