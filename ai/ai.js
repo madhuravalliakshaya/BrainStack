@@ -14,9 +14,7 @@ app.use(express.json())
 
 app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.urlencoded({extended:true}))
-app.get("/", (req, res) => {
-    res.send("Server is running!");
-});
+
 
 import { GoogleGenAI } from "@google/genai";
  const API=process.env.API_KEY
@@ -30,6 +28,9 @@ async function main(content) {
  t=response.text;
  return t
 }
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
 app.post('/submit', async (req,res)=>{
 const k= await main(req.body.prompt)
     res.send({ans:k})
