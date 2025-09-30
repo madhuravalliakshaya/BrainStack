@@ -14,6 +14,10 @@ app.use(express.json())
 
 app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.urlencoded({extended:true}))
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
+
 import { GoogleGenAI } from "@google/genai";
  const API=process.env.API_KEY
 const ai = new GoogleGenAI({apiKey:API});
