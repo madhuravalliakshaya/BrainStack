@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "BrainStack",
+  "version": "1.0",
+  "description": "Chrome extension to simplify DSA problems using Gemini API",
+  "permissions": ["storage"],
+  "host_permissions": ["https://brainstack-s09p.onrender.com/submit"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js.js"]
+    }
+  ],
+  "icons": {
+  "16": "image.png"
+  }
+
+}
